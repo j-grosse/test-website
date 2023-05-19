@@ -1,0 +1,79 @@
+/* ======================================
+Responsive Image gallery Style rules
+======================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  padding: 40px 5%;
+  height: 100vh;
+}
+
+.heading-text {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.heading-text span {
+  font-weight: 100;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Responsive image gallery rules begin*/
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.image-gallery > li {
+  display: flex;
+  flex-basis: 300px; /*width: 350px;*/
+  justify-content: space-around;
+  position: relative;
+  cursor: pointer;
+}
+
+.image-gallery li img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 15px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(57, 57, 57, 0.502);
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: all 0.2s 0.1s ease-in-out;
+  color: #fff;
+  border-radius: 15px;
+  /* center overlay text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hover */
+.image-gallery li:hover .overlay {
+  transform: scale(1);
+}
